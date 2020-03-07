@@ -3,9 +3,9 @@
 What are the basic things you need to a single step in a workflow?
 
 * Input
-* Outut
-* Exicutatble Commands
-* Enviroment (Ignore for now, will be get back to this in latter part)
+* Output
+* Executable Commands
+* Environment (Ignore for now, will be get back to this in latter part)
 
 Nextflow basic structure
 
@@ -25,13 +25,13 @@ process process_name {
 }
 ```
 
-> Each step in nextflow refered as process.
+> Each step in nextflow refereed as process.
 
-All nextflow script writen in a file called with extntion `.nf`
+Nextflow script written in a file called with extension `.nf`
 
 Lets see a simple nextflow script to do quality check of FASTQ files.
 
-File - fastqc.nf
+File Name - [fastqc.nf](fastqc.nf)
 
 ```nextflow
 params.forward = "./test_data/FASTQ/SRR1039508_1.fastq.gz"
@@ -57,4 +57,4 @@ process fastqc {
 
 Now lets extend it.
 
-File - [quality_check.nf](quality_check.nf)
+File Name - [quality_check.nf](quality_check.nf)
