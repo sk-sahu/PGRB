@@ -9,8 +9,9 @@ With this training guide the intention is to familiarize you with those availabl
 This is made keeping focus on the people from Biological background with good knowledge of bash scripting and programming.
 
 By End of this training you will get an good idea of  
-- Reproducing Computation Environment  
-- Reproducing a Analysis  
-- Reproducing a Workflow/Pipeline 
+
+* Reproducing Computation Environment
+* Reproducing a Analysis
+* Reproducing a Workflow/Pipeline
 
 

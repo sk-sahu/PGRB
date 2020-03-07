@@ -26,8 +26,10 @@ But maintaining **this environments** becomes very difficult when you working wi
 And what if tomorrow if you wants to change your system or you tell you collaborator to run the whole thing what you have run. Then in both the case all the tools need to be installed again from scratch.
 
 In that case following tools/platforms comes handy 
-* [Conda](conda/README.md) - An open-source package manager and environment management system.
-* [Docker](docker/README.md) - A light weight platform which helps create portable virtual environment.
+
+In that case following tools/platforms comes handy 
+* [Conda](#a-basic-conda-guide) - An open-source package manager and environment management system.
+* [Docker](#a-basic-docker-guide) - A light weight platform which helps create portable virtual environment.
 
 ## A basic conda guide
 
