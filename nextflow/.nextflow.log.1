@@ -1,0 +1,111 @@
+Mar-07 19:28:13.690 [main] DEBUG nextflow.cli.Launcher - $> nextflow run quality_chceck.nf
+Mar-07 19:28:14.014 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.10.0
+Mar-07 19:28:14.037 [main] INFO  nextflow.cli.CmdRun - Launching `quality_chceck.nf` [silly_ritchie] - revision: 07cc2567b0
+Mar-07 19:28:14.327 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Mar-07 19:28:14.344 [main] DEBUG nextflow.Session - Session uuid: df04e6ab-ccb9-406f-9942-a7e87bec6d13
+Mar-07 19:28:14.344 [main] DEBUG nextflow.Session - Run name: silly_ritchie
+Mar-07 19:28:14.357 [main] DEBUG nextflow.Session - Executor pool size: 4
+Mar-07 19:28:14.437 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.10.0 build 5170
+  Created: 21-10-2019 15:07 UTC (20:37 IDT)
+  System: Linux 5.3.0-40-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 27670@sksahu-pc [192.168.1.5]
+  CPUs: 4 - Mem: 7.7 GB (2.2 GB) - Swap: 7.4 GB (6.6 GB)
+Mar-07 19:28:14.500 [main] DEBUG nextflow.Session - Work-dir: /home/sangram/Documents/personal/RPB/nextflow/work [ext2/ext3]
+Mar-07 19:28:14.500 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/sangram/Documents/personal/RPB/nextflow/bin
+Mar-07 19:28:14.529 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Mar-07 19:28:14.532 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-07 19:28:14.884 [main] DEBUG nextflow.Session - Session start invoked
+Mar-07 19:28:15.719 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-07 19:28:15.829 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/sangram/Documents/personal/RPB/nextflow/test_data/FASTQ/; pattern: SRR*_{1,2}.fastq.gz; options: [:]
+Mar-07 19:28:16.070 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `outdir` -- Initialise it to a default value eg. `params.outdir = some_value`
+Mar-07 19:28:16.155 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:28:16.156 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:28:16.170 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-07 19:28:16.183 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=7.7 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Mar-07 19:28:16.271 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc_before_trim -- maxForks: 4
+Mar-07 19:28:16.339 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:28:16.340 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:28:16.368 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > trim -- maxForks: 4
+Mar-07 19:28:16.409 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:28:16.413 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:28:16.420 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc_after_trim -- maxForks: 4
+Mar-07 19:28:16.438 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Mar-07 19:28:16.440 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Mar-07 19:28:16.440 [main] DEBUG nextflow.Session - Session await
+Mar-07 19:28:16.464 [Actor Thread 3] WARN  nextflow.processor.TaskProcessor - Input tuple does not match input set cardinality declared by process `fastqc_before_trim` -- offending value: [SRR1039508, [/home/sangram/Documents/personal/RPB/nextflow/test_data/FASTQ/SRR1039508_1.fastq.gz, /home/sangram/Documents/personal/RPB/nextflow/test_data/FASTQ/SRR1039508_2.fastq.gz]]
+Mar-07 19:28:16.786 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-07 19:28:16.796 [Task submitter] INFO  nextflow.Session - [20/099bac] Submitted process > fastqc_before_trim (FASTQC on SRR1039508)
+Mar-07 19:28:16.813 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-07 19:28:16.827 [Task submitter] INFO  nextflow.Session - [79/5b833f] Submitted process > trim (trim on SRR1039508)
+Mar-07 19:28:19.377 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: trim (trim on SRR1039508); status: COMPLETED; exit: 0; error: -; workDir: /home/sangram/Documents/personal/RPB/nextflow/work/79/5b833f59b5baeb310ee3f7a36df339]
+Mar-07 19:28:19.475 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-07 19:28:19.483 [Task submitter] INFO  nextflow.Session - [74/da86ef] Submitted process > fastqc_after_trim (FASTQC on SRR1039508)
+Mar-07 19:28:19.515 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'trim (trim on SRR1039508)'
+
+Caused by:
+  Target path for directive publishDir cannot be null
+
+java.lang.IllegalStateException: Target path for directive publishDir cannot be null
+	at nextflow.processor.PublishDir.apply(PublishDir.groovy:200)
+	at nextflow.processor.PublishDir$apply.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:115)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:135)
+	at nextflow.processor.TaskProcessor.publishOutputs0(TaskProcessor.groovy:1226)
+	at nextflow.processor.TaskProcessor.publishOutputs(TaskProcessor.groovy:1201)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:156)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at nextflow.processor.TaskProcessor.finalizeTask0(TaskProcessor.groovy:2093)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:190)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:156)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:168)
+	at nextflow.processor.TaskProcessor.finalizeTask(TaskProcessor.groovy:2064)
+	at nextflow.processor.TaskPollingMonitor.checkTaskStatus(TaskPollingMonitor.groovy:609)
+	at nextflow.processor.TaskPollingMonitor.checkAllTasks(TaskPollingMonitor.groovy:529)
+	at nextflow.processor.TaskPollingMonitor.pollLoop(TaskPollingMonitor.groovy:408)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:101)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1217)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1041)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:1011)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:994)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:97)
+	at nextflow.processor.TaskPollingMonitor$_start_closure2.doCall(TaskPollingMonitor.groovy:292)
+	at nextflow.processor.TaskPollingMonitor$_start_closure2.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:486)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Mar-07 19:28:19.545 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Target path for directive publishDir cannot be null
+Mar-07 19:28:19.636 [Task monitor] DEBUG nextflow.Session - The following nodes are still active:
+[process] fastqc_after_trim
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Mar-07 19:28:19.721 [main] DEBUG nextflow.Session - Session await > all process finished
+Mar-07 19:28:19.722 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-07 19:28:19.751 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (2)
+Mar-07 19:28:19.836 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=2; ignoredCount=0; cachedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms]
+Mar-07 19:28:20.018 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Mar-07 19:28:20.054 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,77 @@
+Mar-07 19:07:00.694 [main] DEBUG nextflow.cli.Launcher - $> nextflow run quality_chceck.nf
+Mar-07 19:07:00.949 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.10.0
+Mar-07 19:07:00.977 [main] INFO  nextflow.cli.CmdRun - Launching `quality_chceck.nf` [exotic_coulomb] - revision: e35265d55c
+Mar-07 19:07:01.212 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Mar-07 19:07:01.233 [main] DEBUG nextflow.Session - Session uuid: 1c89182b-42b5-4d3f-be46-a87504659540
+Mar-07 19:07:01.234 [main] DEBUG nextflow.Session - Run name: exotic_coulomb
+Mar-07 19:07:01.238 [main] DEBUG nextflow.Session - Executor pool size: 4
+Mar-07 19:07:01.312 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.10.0 build 5170
+  Created: 21-10-2019 15:07 UTC (20:37 IDT)
+  System: Linux 5.3.0-40-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 26347@sksahu-pc [192.168.1.5]
+  CPUs: 4 - Mem: 7.7 GB (2.3 GB) - Swap: 7.4 GB (6.6 GB)
+Mar-07 19:07:01.370 [main] DEBUG nextflow.Session - Work-dir: /home/sangram/Documents/personal/RPB/nextflow/work [ext2/ext3]
+Mar-07 19:07:01.371 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/sangram/Documents/personal/RPB/nextflow/bin
+Mar-07 19:07:01.409 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Mar-07 19:07:01.419 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-07 19:07:01.782 [main] DEBUG nextflow.Session - Session start invoked
+Mar-07 19:07:02.605 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-07 19:07:02.746 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:07:02.747 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:07:02.762 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-07 19:07:02.773 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=7.7 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Mar-07 19:07:02.957 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc -- maxForks: 4
+Mar-07 19:07:03.057 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:07:03.058 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:07:03.060 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > read_trim -- maxForks: 4
+Mar-07 19:07:03.075 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Mar-07 19:07:03.082 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Mar-07 19:07:03.082 [main] DEBUG nextflow.Session - Session await
+Mar-07 19:07:03.483 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-07 19:07:03.497 [Task submitter] INFO  nextflow.Session - [38/ad58c9] Submitted process > read_trim (removeing adopters)
+Mar-07 19:07:03.537 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-07 19:07:03.541 [Task submitter] INFO  nextflow.Session - [6c/aab13c] Submitted process > fastqc
+Mar-07 19:07:03.610 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: read_trim (removeing adopters); status: COMPLETED; exit: 255; error: -; workDir: /home/sangram/Documents/personal/RPB/nextflow/work/38/ad58c950feef5611201a39c8619992]
+Mar-07 19:07:03.700 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'read_trim (removeing adopters)'
+
+Caused by:
+  Process `read_trim (removeing adopters)` terminated with an error exit status (255)
+
+Command executed:
+
+  mkdir HQ_reads
+  fastp -i ./test_data/FASTQ/SRR1039508_1.fastq.gz -I ./test_data/FASTQ/SRR1039508_2.fastq.gz         -o HQ_reads/forward.fastq.gz         -O HG_reads/reverse.fastq.gz         --json HQ_reads/fastp.json 		--html HQ_reads/fastp.html         --detect_adapter_for_pe         --disable_length_filtering         --correction
+
+Command exit status:
+  255
+
+Command output:
+  (empty)
+
+Command error:
+  Error to read gzip file
+  Error to read gzip file
+  Detecting adapter sequence for read1...
+  Error to read gzip file
+  No adapter detected for read1
+  
+  Detecting adapter sequence for read2...
+  Error to read gzip file
+  No adapter detected for read2
+  
+  ERROR: file './test_data/FASTQ/SRR1039508_1.fastq.gz' doesn't exist, quit now
+
+Work dir:
+  /home/sangram/Documents/personal/RPB/nextflow/work/38/ad58c950feef5611201a39c8619992
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Mar-07 19:07:03.774 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `read_trim (removeing adopters)` terminated with an error exit status (255)
+Mar-07 19:07:03.866 [main] DEBUG nextflow.Session - Session await > all process finished
+Mar-07 19:07:03.867 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-07 19:07:03.896 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (1)
+Mar-07 19:07:03.929 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=2; ignoredCount=0; cachedCount=0; succeedDuration=0ms; failedDuration=3ms; cachedDuration=0ms]
+Mar-07 19:07:04.156 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Mar-07 19:07:04.207 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

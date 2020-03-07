@@ -1,0 +1,79 @@
+Mar-07 19:25:56.188 [main] DEBUG nextflow.cli.Launcher - $> nextflow run quality_chceck.nf
+Mar-07 19:25:56.492 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 19.10.0
+Mar-07 19:25:56.522 [main] INFO  nextflow.cli.CmdRun - Launching `quality_chceck.nf` [trusting_majorana] - revision: b24ded40db
+Mar-07 19:25:56.771 [main] DEBUG nextflow.extension.OperatorEx - Dataflow extension methods: branch,buffer,chain,choice,collate,collect,collectFile,combine,concat,count,countBy,countFasta,countFastq,countLines,countText,cross,distinct,filter,first,flatMap,flatten,fork,groupBy,groupTuple,ifEmpty,into,join,last,map,max,mean,merge,min,mix,phase,print,println,randomSample,reduce,separate,set,splitCsv,splitFasta,splitFastq,splitText,spread,subscribe,sum,take,tap,toDouble,toFloat,toInteger,toList,toLong,toSortedList,transpose,unique,until,view
+Mar-07 19:25:56.787 [main] DEBUG nextflow.Session - Session uuid: 440ceb6b-7614-4eb3-b5e2-4d0bff5dea75
+Mar-07 19:25:56.788 [main] DEBUG nextflow.Session - Run name: trusting_majorana
+Mar-07 19:25:56.792 [main] DEBUG nextflow.Session - Executor pool size: 4
+Mar-07 19:25:56.867 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 19.10.0 build 5170
+  Created: 21-10-2019 15:07 UTC (20:37 IDT)
+  System: Linux 5.3.0-40-generic
+  Runtime: Groovy 2.5.8 on OpenJDK 64-Bit Server VM 11.0.1+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 27493@sksahu-pc [192.168.1.5]
+  CPUs: 4 - Mem: 7.7 GB (2.3 GB) - Swap: 7.4 GB (6.6 GB)
+Mar-07 19:25:56.912 [main] DEBUG nextflow.Session - Work-dir: /home/sangram/Documents/personal/RPB/nextflow/work [ext2/ext3]
+Mar-07 19:25:56.912 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/sangram/Documents/personal/RPB/nextflow/bin
+Mar-07 19:25:56.948 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Mar-07 19:25:56.951 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-07 19:25:57.298 [main] DEBUG nextflow.Session - Session start invoked
+Mar-07 19:25:58.219 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-07 19:25:58.333 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/sangram/Documents/personal/RPB/nextflow/test_data/FASTQ/; pattern: SRR*_{1,2}.fastq.gz; options: [:]
+Mar-07 19:25:58.615 [main] WARN  nextflow.script.ScriptBinding - Access to undefined parameter `outdir` -- Initialise it to a default value eg. `params.outdir = some_value`
+Mar-07 19:25:58.717 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:25:58.717 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:25:58.727 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-07 19:25:58.743 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=7.7 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Mar-07 19:25:58.836 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc_before_trim -- maxForks: 4
+Mar-07 19:25:58.921 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:25:58.926 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:25:58.928 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > trim -- maxForks: 4
+Mar-07 19:25:58.989 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-07 19:25:58.989 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-07 19:25:58.990 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > fastqc_after_trim -- maxForks: 4
+Mar-07 19:25:59.004 [main] DEBUG nextflow.script.BaseScript - No entry workflow defined
+Mar-07 19:25:59.010 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Mar-07 19:25:59.011 [main] DEBUG nextflow.Session - Session await
+Mar-07 19:25:59.046 [Actor Thread 1] WARN  nextflow.processor.TaskProcessor - Input tuple does not match input set cardinality declared by process `fastqc_before_trim` -- offending value: [SRR1039508, [/home/sangram/Documents/personal/RPB/nextflow/test_data/FASTQ/SRR1039508_1.fastq.gz, /home/sangram/Documents/personal/RPB/nextflow/test_data/FASTQ/SRR1039508_2.fastq.gz]]
+Mar-07 19:25:59.301 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-07 19:25:59.314 [Task submitter] INFO  nextflow.Session - [48/511c9b] Submitted process > trim (trim on SRR1039508)
+Mar-07 19:25:59.324 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-07 19:25:59.325 [Task submitter] INFO  nextflow.Session - [b6/48213a] Submitted process > fastqc_before_trim (FASTQC on SRR1039508)
+Mar-07 19:25:59.489 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: fastqc_before_trim (FASTQC on SRR1039508); status: COMPLETED; exit: 2; error: -; workDir: /home/sangram/Documents/personal/RPB/nextflow/work/b6/48213ae98644da6d8b974004001b38]
+Mar-07 19:25:59.567 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'fastqc_before_trim (FASTQC on SRR1039508)'
+
+Caused by:
+  Process `fastqc_before_trim (FASTQC on SRR1039508)` terminated with an error exit status (2)
+
+Command executed:
+
+  mkdir fastqc_SRR1039508_before__trim_logs
+  fastqc -o fastqc_SRR1039508_before_trim_logs -f fastq -q SRR1039508_1.fastq.gz SRR1039508_2.fastq.gz input.3
+
+Command exit status:
+  2
+
+Command output:
+  (empty)
+
+Command error:
+  Specified output directory 'fastqc_SRR1039508_before_trim_logs' does not exist
+
+Work dir:
+  /home/sangram/Documents/personal/RPB/nextflow/work/b6/48213ae98644da6d8b974004001b38
+
+Tip: you can try to figure out what's wrong by changing to the process work dir and showing the script file named `.command.sh`
+Mar-07 19:25:59.617 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `fastqc_before_trim (FASTQC on SRR1039508)` terminated with an error exit status (2)
+Mar-07 19:25:59.714 [Task monitor] DEBUG nextflow.Session - The following nodes are still active:
+[process] fastqc_after_trim
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Mar-07 19:25:59.716 [main] DEBUG nextflow.Session - Session await > all process finished
+Mar-07 19:25:59.717 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-07 19:25:59.734 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (1)
+Mar-07 19:25:59.771 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=0; failedCount=2; ignoredCount=0; cachedCount=0; succeedDuration=0ms; failedDuration=105ms; cachedDuration=0ms]
+Mar-07 19:25:59.866 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Mar-07 19:25:59.899 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
