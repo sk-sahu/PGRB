@@ -1,0 +1,21 @@
+--- 
+title: "Reproducibility in Bioinformatics"
+author: "Sangram Keshari Sahu"
+date: "`r Sys.Date()`"
+site: "bookdown::bookdown_site"
+output:
+  bookdown::gitbook: default
+documentclass: book
+#bibliography: ["book.bib", "packages.bib"]
+#biblio-style: apalike
+#link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+# Preface {-}
+
+In this book, we will introduce an interesting
+method.

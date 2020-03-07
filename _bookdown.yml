@@ -1,0 +1,8 @@
+book_filename: "Reproducibility in Bioinformatics"
+chapter_name: "Chapter "
+output_dir: docs
+delete_merged_file: true
+rmd_files: ["index.Rmd",
+  "01-intro.Rmd",
+  "02-Computation-Environment.Rmd",
+  "03-reproducing-a-workflow.Rmd"]
