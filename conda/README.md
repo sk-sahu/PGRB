@@ -1,6 +1,6 @@
 # A basic conda guide
 
-Conda is package manager and environment management system. That means you can install any tool using this and at the same time you can use this to manager those tools in different environments.
+Conda is a package manager and environment management system. That means you can install any tool using this and at the same time you can use this to manager those tools in different environments.
 
 I work with quite a lot of tools and packages. Personally conda have been a life saver for me. Which you will also realize once you start using it.
 
