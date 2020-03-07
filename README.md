@@ -1,9 +1,12 @@
-# RPB
-Reproducibility in Bioinformatics
+# Reproducibility in Bioinformatics (Work In Progress)
 
-This training guide is intended for the people from Biological background with good knowledge of bash scripting and programming.
+Reproducibility is very much essential for any kind of scientific research.
 
-Reproducibility become 
+As Biology becoming more of computational and data dependent, It is responsibility of the researcher to take advantage of available concepts/platforms/methods/tools to reproduce every piece of results/findings. 
+
+With this training guide the intention is to familiarize you with those available concepts/platforms/methods/tools.
+
+This is made keeping focus on the people from Biological background with good knowledge of bash scripting and programming.
 
 By End of this training you will get an good idea of
 * Reproducing Computation Environment
@@ -18,13 +21,19 @@ By End of this training you will get an good idea of
 > 
 > Whenever you open a bash terminal there are certain tools/commands available to you for use. Those are most probably present in your `.bashrc` or a path is exported.
 
-If you using different bioinformatics tools for sometime now you must have done exporting path at some point of time.
+If you using lots of different bioinformatics tools at some point of time must have downloaded a tool, complied (if not already in binary) and then exported path.
 
 ```bash
 export PATH="tool-path:$PATH"
 ```
 
-Basically you have tell the computer to make available the tool in you **current environment**. So that you can just call the tool name instead of giving the whole path every time.
+Or if you are lucky, then downloaded using some system package manager, which automatically exports the path for you.
+
+```bash
+apt-get install fastqc
+```
+
+Basically you have tells the computer to make available the tool in you **current environment**. So that you can just call the tool name instead of giving the whole path every time.
 
 But maintaining **this environments** becomes very difficult when you working with lots of tools or in a shared computer(HPC) and Cloud.
 

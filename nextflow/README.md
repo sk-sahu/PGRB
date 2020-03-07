@@ -1,4 +1,4 @@
-# A simple Nextflow guide
+# A basic Nextflow guide
 
 What are the basic things you need to a single step in a workflow?
 
