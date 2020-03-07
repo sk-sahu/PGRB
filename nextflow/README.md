@@ -57,4 +57,4 @@ process fastqc {
 
 Now lets extend it.
 
-File - [quality_chceck.nf](quality_chceck.nf)
+File - [quality_check.nf](quality_check.nf)
