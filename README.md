@@ -139,7 +139,7 @@ Nextflow script written in a file called with extension `.nf`
 
 Lets see a simple nextflow script to do quality check of FASTQ files.
 
-File Name - [fastqc.nf](fastqc.nf)
+File Name - [fastqc.nf](supplementary/nextflow/fastqc.nf)
 
 ```nextflow
 params.forward = "./test_data/FASTQ/SRR1039508_1.fastq.gz"
@@ -165,4 +165,4 @@ process fastqc {
 
 Now lets extend it.
 
-File Name - [quality_check.nf](quality_check.nf)
+File Name - [quality_check.nf](supplementary/nextflow/quality_check.nf)

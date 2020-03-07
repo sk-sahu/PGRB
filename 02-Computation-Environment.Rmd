@@ -28,6 +28,7 @@ And what if tomorrow if you wants to change your system or you tell you collabor
 In that case following tools/platforms comes handy 
 
 In that case following tools/platforms comes handy 
+
 * [Conda](#a-basic-conda-guide) - An open-source package manager and environment management system.
 * [Docker](#a-basic-docker-guide) - A light weight platform which helps create portable virtual environment.
 
