@@ -1,0 +1,13 @@
+bookdown::gitbook:
+  includes:
+    in_header: analytics.html
+    #after_body: [google_translate.html]
+  #css: style.css
+  #config:
+  #  sharing: null
+  #  toc:
+  #    before: |
+  #      <li><a href="./">A Minimal Book Example</a></li>
+  #    after: |
+  #      <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+  # edit: https://github.com/benmarwick/bookdown-ort/edit/master/%s
