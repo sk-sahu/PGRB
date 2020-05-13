@@ -1,2 +1,2 @@
 . _build.sh
-htmlproofer ./docs
+#htmlproofer ./docs
