@@ -1,0 +1,21 @@
+Package: PGRPB
+Type: Package
+Title: Practical Guide to Reproducibility in Bioinforamtics
+Version: 0.1.0
+Authors@R: c(
+    person("Sangram", "Keshari", "Sahu", "sangram@sksahu.net",
+           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5010-9539"))
+Maintainer: Sangram Keshari Sahu <sangram@sksahu.net>
+Description: A book on 
+    Practical Guide to Reproducibility in Bioinforamtics.
+License: GPL-3
+Depends:
+    R (>= 3.3.2)
+Imports:
+    bookdown
+URL: https://sk-sahu.github.io/RPB/
+BugReports: https://github.com/sk-sahu/RPB/issues
+SystemRequirements: Pandoc (>= 1.17.2)
+LazyData: TRUE
+RoxygenNote: 7.1.0
+Encoding: UTF-8
