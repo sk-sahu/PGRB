@@ -36,18 +36,51 @@ In that case following tools/platforms comes handy
 
 Conda is a package manager and environment management system. That means you can install any tool using this and at the same time you can use this to manager those tools in different environments.
 
-I work with quite a lot of tools and packages. Personally conda have been a life saver for me. Which you will also realize once you start using it.
+I work with quite a lot of tools and packages. Personally conda have been a life saver for me. Which you will also realize as soon as you start using it yourself.
 
-Most of the tools used by Bioinformatics applications are available in **bioconda** channel. 
+Tools/Packages in conda are distributed in different channels. [Read more about conda channels here](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html)
 
-So for say if you just wants to install `fastqc` then you simply need to do - 
+Most of the tools used by Bioinformatics applications are available in **bioconda** channel. So If you looking for a tool just google it followed by bioconda, and in most cases the first or second link will take to its conda home page. There you will get information about how to install it. Also, you can search for the tool from command line as well.
+
+Example:
 
 ```bash
-conda install fastqc -c bioconda
+conda search -c bioconda tool_name
 ```
 
+So for say if you just wants to install `fastqc` then a simple google will land you at [this fastqc conda home page](https://anaconda.org/bioconda/fastqc)
 
-TODO
+Or from command line - 
+
+```bash
+conda search fastqc -c bioconda
+
+Loading channels: done
+# Name                       Version           Build  Channel             
+fastqc                        0.10.1               0  bioconda            
+fastqc                        0.10.1               1  bioconda            
+fastqc                        0.11.2      pl5.22.0_0  bioconda            
+fastqc                        0.11.3               0  bioconda            
+fastqc                        0.11.3               1  bioconda            
+fastqc                        0.11.7               5  bioconda            
+fastqc                        0.11.7               6  bioconda            
+fastqc                        0.11.7      pl5.22.0_0  bioconda            
+fastqc                        0.11.7      pl5.22.0_2  bioconda            
+fastqc                        0.11.8               2  bioconda            
+fastqc                        0.11.9               0  bioconda    
+```
+
+Here, the output shows different version. If you want you can mention a particular version while installing (such as `fastqc=0.11.9`) otherwise conda itself coice a particular lastest version based on suitable dependency.
+
+lets install fastp
+
+```bash
+conda search fastqc -c bioconda
+```
+
+this may take few minutes depedning upon the number of dependency
+
+TODO: Advance-mamba
 
 ## A basic docker guide
 
@@ -80,3 +113,7 @@ docker run --rm fastqc:latest fastqc --help
 ```
 
 You should see the `fastqc` help menu
+
+TODO: advance - alphin images, docker-compose
+
+TODO: packrat
