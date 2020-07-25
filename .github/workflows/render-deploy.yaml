@@ -18,7 +18,7 @@ jobs:
 
       - name: Render in the container
         run: |
-          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+          bash _build.sh
       
       - name: Install rsync 📚
         run: |
