@@ -1,4 +1,4 @@
-name: render-deploty
+name: render-deploy
 
 on:
   push:
