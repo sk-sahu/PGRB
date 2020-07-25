@@ -20,12 +20,12 @@ jobs:
         run: |
           Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
       
-      # - name: Install rsync 📚
-      #   run: |
-      #     apt-get update && apt-get install -y rsync
-      # - name: Deploy 🚀
-      #   uses: JamesIves/github-pages-deploy-action@3.5.7
-      #   with:
-      #     GITHUB_TOKEN: ${{ secrets.TK2 }}
-      #     BRANCH: gh-pages
-      #     FOLDER: .
+      - name: Install rsync 📚
+        run: |
+          apt-get update && apt-get install -y rsync
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.5.7
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: .
