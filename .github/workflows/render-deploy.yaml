@@ -1,0 +1,31 @@
+name: render-deploty
+
+on:
+  push:
+    branches: master
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    container: rocker/verse:4.0.1
+    steps:
+      - uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+
+      - uses: r-lib/actions/setup-r@v1
+      - uses: r-lib/actions/setup-pandoc@v1
+
+      - name: Render in the container
+        run: |
+          Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
+      
+      # - name: Install rsync 📚
+      #   run: |
+      #     apt-get update && apt-get install -y rsync
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@3.5.7
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.TK2 }}
+      #     BRANCH: gh-pages
+      #     FOLDER: .
