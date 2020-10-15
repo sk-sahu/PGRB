@@ -27,8 +27,6 @@ And what if tomorrow if you wants to change your system or you tell you collabor
 
 In that case following tools/platforms comes handy 
 
-In that case following tools/platforms comes handy 
-
 * [Conda](#a-basic-conda-guide) - An open-source package manager and environment management system.
 * [Docker](#a-basic-docker-guide) - A light weight platform which helps create portable virtual environment.
 
@@ -36,19 +34,15 @@ In that case following tools/platforms comes handy
 
 Conda is a package manager and environment management system. That means you can install any tool using this and at the same time you can use this to manager those tools in different environments.
 
-I work with quite a lot of tools and packages. Personally conda have been a life saver for me. Which you will also realize as soon as you start using it yourself.
-
 Tools/Packages in conda are distributed in different channels. [Read more about conda channels here](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html)
 
-Most of the tools used by Bioinformatics applications are available in **bioconda** channel. So If you looking for a tool just google it followed by bioconda, and in most cases the first or second link will take to its conda home page. There you will get information about how to install it. Also, you can search for the tool from command line as well.
+### Use case
 
-Example:
+Lets say a Sam is a researcher, who recently sequenced some data and received FASTQ files. He want to do quality check of those data in a reproducible, so that if a college of his try to reproduce the results he can easily do so.
 
-```bash
-conda search -c bioconda tool_name
-```
+fastqc tool is going to be used here. Let install that using conda.
 
-So for say if you just wants to install `fastqc` then a simple google will land you at [this fastqc conda home page](https://anaconda.org/bioconda/fastqc)
+A simple google of `fastqc conda` will land you at [this fastqc conda home page](https://anaconda.org/bioconda/fastqc)
 
 Or from command line - 
 
@@ -70,17 +64,37 @@ fastqc                        0.11.8               2  bioconda
 fastqc                        0.11.9               0  bioconda    
 ```
 
-Here, the output shows different version. If you want you can mention a particular version while installing (such as `fastqc=0.11.9`) otherwise conda itself coice a particular lastest version based on suitable dependency.
+> Most of the tools used by Bioinformatics applications are available in **bioconda** channel. So If you looking for a tool just google it followed by bioconda, and in most cases the first or second link will take to its conda home page. There you will get information about how to install it. Also, you can search for the tool from command line as well.
 
-lets install fastp
+Here, the output shows different version. If you want you can mention a particular version while installing (such as `fastqc=0.11.9`) otherwise conda itself choice a particular latest version based on suitable dependency.
+
+lets install fastp in an isolated conda environment `qc`
 
 ```bash
-conda search fastqc -c bioconda
+conda install fastqc -c bioconda -n qc
 ```
 
-this may take few minutes depedning upon the number of dependency
+This may take few minutes depending upon the number of dependency
 
-TODO: Advance-mamba
+> Why isolated enviroment is required? 
+> Because this makes sure clash of dependency for the tools doesn't happen.
+
+
+To use this newly created environment, we need to enter into it
+
+```bash
+conda activate qc
+```
+
+Here we can normally use the tools/commands.
+
+Now Sam can share this complete environment to his college by just generating a yml file.
+
+```bash
+conda env export > qc.yml
+```
+
+Read about [conda in reproducible-research](https://the-turing-way.netlify.app/reproducible-research/renv/renv-package.html)
 
 ## A basic docker guide
 
@@ -114,6 +128,11 @@ docker run --rm fastqc:latest fastqc --help
 
 You should see the `fastqc` help menu
 
+Read about [docker in reproducible-research](https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html)
+
 TODO: advance - alphin images, docker-compose
 
-TODO: packrat
+TODO: packrat/renv
+
+Read more about Reproducible environments in [The Turing Way Project](https://the-turing-way.netlify.app/reproducible-research/renv.html)
+
