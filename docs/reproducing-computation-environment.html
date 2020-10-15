@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Reproducing Computation Environment | Reproducibility in Bioinformatics</title>
   <meta name="description" content="Chapter 2 Reproducing Computation Environment | Reproducibility in Bioinformatics" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Reproducing Computation Environment | Reproducibility in Bioinformatics" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Sangram Keshari Sahu" />
 
 
-<meta name="date" content="2020-03-08" />
+<meta name="date" content="2020-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 <style type="text/css">
@@ -132,7 +133,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="reproducing-computation-environment.html"><a href="reproducing-computation-environment.html"><i class="fa fa-check"></i><b>2</b> Reproducing Computation Environment</a><ul>
-<li class="chapter" data-level="2.1" data-path="reproducing-computation-environment.html"><a href="reproducing-computation-environment.html#a-basic-conda-guide"><i class="fa fa-check"></i><b>2.1</b> A basic conda guide</a></li>
+<li class="chapter" data-level="2.1" data-path="reproducing-computation-environment.html"><a href="reproducing-computation-environment.html#a-basic-conda-guide"><i class="fa fa-check"></i><b>2.1</b> A basic conda guide</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="reproducing-computation-environment.html"><a href="reproducing-computation-environment.html#use-case"><i class="fa fa-check"></i><b>2.1.1</b> Use case</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="reproducing-computation-environment.html"><a href="reproducing-computation-environment.html#a-basic-docker-guide"><i class="fa fa-check"></i><b>2.2</b> A basic docker guide</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="reproducing-a-workflowpipeline.html"><a href="reproducing-a-workflowpipeline.html"><i class="fa fa-check"></i><b>3</b> Reproducing a Workflow/Pipeline</a><ul>
@@ -171,7 +174,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>But maintaining <strong>this environments</strong> becomes very difficult when you working with lots of tools or in a shared computer(HPC) and Cloud.</p>
 <p>And what if tomorrow if you wants to change your system or you tell you collaborator to run the whole thing what you have run. Then in both the case all the tools need to be installed again from scratch.</p>
 <p>In that case following tools/platforms comes handy</p>
-<p>In that case following tools/platforms comes handy</p>
 <ul>
 <li><a href="reproducing-computation-environment.html#a-basic-conda-guide">Conda</a> - An open-source package manager and environment management system.</li>
 <li><a href="reproducing-computation-environment.html#a-basic-docker-guide">Docker</a> - A light weight platform which helps create portable virtual environment.</li>
@@ -179,11 +181,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="a-basic-conda-guide" class="section level2">
 <h2><span class="header-section-number">2.1</span> A basic conda guide</h2>
 <p>Conda is a package manager and environment management system. That means you can install any tool using this and at the same time you can use this to manager those tools in different environments.</p>
-<p>I work with quite a lot of tools and packages. Personally conda have been a life saver for me. Which you will also realize once you start using it.</p>
-<p>Most of the tools used by Bioinformatics applications are available in <strong>bioconda</strong> channel.</p>
-<p>So for say if you just wants to install <code>fastqc</code> then you simply need to do -</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="reproducing-computation-environment.html#cb3-1"></a><span class="ex">conda</span> install fastqc -c bioconda</span></code></pre></div>
-<p>TODO</p>
+<p>Tools/Packages in conda are distributed in different channels. <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html">Read more about conda channels here</a></p>
+<div id="use-case" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Use case</h3>
+<p>Lets say a Sam is a researcher, who recently sequenced some data and received FASTQ files. He want to do quality check of those data in a reproducible, so that if a college of his try to reproduce the results he can easily do so.</p>
+<p>fastqc tool is going to be used here. Let install that using conda.</p>
+<p>A simple google of <code>fastqc conda</code> will land you at <a href="https://anaconda.org/bioconda/fastqc">this fastqc conda home page</a></p>
+<p>Or from command line -</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="reproducing-computation-environment.html#cb3-1"></a><span class="ex">conda</span> search fastqc -c bioconda</span>
+<span id="cb3-2"><a href="reproducing-computation-environment.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="reproducing-computation-environment.html#cb3-3"></a><span class="ex">Loading</span> channels: done</span>
+<span id="cb3-4"><a href="reproducing-computation-environment.html#cb3-4"></a><span class="co"># Name                       Version           Build  Channel             </span></span>
+<span id="cb3-5"><a href="reproducing-computation-environment.html#cb3-5"></a><span class="ex">fastqc</span>                        0.10.1               0  bioconda            </span>
+<span id="cb3-6"><a href="reproducing-computation-environment.html#cb3-6"></a><span class="ex">fastqc</span>                        0.10.1               1  bioconda            </span>
+<span id="cb3-7"><a href="reproducing-computation-environment.html#cb3-7"></a><span class="ex">fastqc</span>                        0.11.2      pl5.22.0_0  bioconda            </span>
+<span id="cb3-8"><a href="reproducing-computation-environment.html#cb3-8"></a><span class="ex">fastqc</span>                        0.11.3               0  bioconda            </span>
+<span id="cb3-9"><a href="reproducing-computation-environment.html#cb3-9"></a><span class="ex">fastqc</span>                        0.11.3               1  bioconda            </span>
+<span id="cb3-10"><a href="reproducing-computation-environment.html#cb3-10"></a><span class="ex">fastqc</span>                        0.11.7               5  bioconda            </span>
+<span id="cb3-11"><a href="reproducing-computation-environment.html#cb3-11"></a><span class="ex">fastqc</span>                        0.11.7               6  bioconda            </span>
+<span id="cb3-12"><a href="reproducing-computation-environment.html#cb3-12"></a><span class="ex">fastqc</span>                        0.11.7      pl5.22.0_0  bioconda            </span>
+<span id="cb3-13"><a href="reproducing-computation-environment.html#cb3-13"></a><span class="ex">fastqc</span>                        0.11.7      pl5.22.0_2  bioconda            </span>
+<span id="cb3-14"><a href="reproducing-computation-environment.html#cb3-14"></a><span class="ex">fastqc</span>                        0.11.8               2  bioconda            </span>
+<span id="cb3-15"><a href="reproducing-computation-environment.html#cb3-15"></a><span class="ex">fastqc</span>                        0.11.9               0  bioconda    </span></code></pre></div>
+<blockquote>
+<p>Most of the tools used by Bioinformatics applications are available in <strong>bioconda</strong> channel. So If you looking for a tool just google it followed by bioconda, and in most cases the first or second link will take to its conda home page. There you will get information about how to install it. Also, you can search for the tool from command line as well.</p>
+</blockquote>
+<p>Here, the output shows different version. If you want you can mention a particular version while installing (such as <code>fastqc=0.11.9</code>) otherwise conda itself choice a particular latest version based on suitable dependency.</p>
+<p>lets install fastp in an isolated conda environment <code>qc</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="reproducing-computation-environment.html#cb4-1"></a><span class="ex">conda</span> install fastqc -c bioconda -n qc</span></code></pre></div>
+<p>This may take few minutes depending upon the number of dependency</p>
+<blockquote>
+<p>Why isolated enviroment is required?
+Because this makes sure clash of dependency for the tools doesn’t happen.</p>
+</blockquote>
+<p>To use this newly created environment, we need to enter into it</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="reproducing-computation-environment.html#cb5-1"></a><span class="ex">conda</span> activate qc</span></code></pre></div>
+<p>Here we can normally use the tools/commands.</p>
+<p>Now Sam can share this complete environment to his college by just generating a yml file.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="reproducing-computation-environment.html#cb6-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> qc.yml</span></code></pre></div>
+<p>Read about <a href="https://the-turing-way.netlify.app/reproducible-research/renv/renv-package.html">conda in reproducible-research</a></p>
+</div>
 </div>
 <div id="a-basic-docker-guide" class="section level2">
 <h2><span class="header-section-number">2.2</span> A basic docker guide</h2>
@@ -196,11 +233,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 RUN apt-get update
 RUN apt-get install -y fastqc </code></pre>
 <p>Built the docker image</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="reproducing-computation-environment.html#cb5-1"></a><span class="bu">cd</span> docker</span>
-<span id="cb5-2"><a href="reproducing-computation-environment.html#cb5-2"></a><span class="ex">docker</span> build -t fastqc:latest .</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="reproducing-computation-environment.html#cb8-1"></a><span class="bu">cd</span> docker</span>
+<span id="cb8-2"><a href="reproducing-computation-environment.html#cb8-2"></a><span class="ex">docker</span> build -t fastqc:latest .</span></code></pre></div>
 <p>Run the docker container</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="reproducing-computation-environment.html#cb6-1"></a><span class="ex">docker</span> run --rm fastqc:latest fastqc --help</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="reproducing-computation-environment.html#cb9-1"></a><span class="ex">docker</span> run --rm fastqc:latest fastqc --help</span></code></pre></div>
 <p>You should see the <code>fastqc</code> help menu</p>
+<p>Read about <a href="https://the-turing-way.netlify.app/reproducible-research/renv/renv-containers.html">docker in reproducible-research</a></p>
+<p>TODO: advance - alphin images, docker-compose</p>
+<p>TODO: packrat/renv</p>
+<p>Read more about Reproducible environments in <a href="https://the-turing-way.netlify.app/reproducible-research/renv.html">The Turing Way Project</a></p>
 
 </div>
 </div>
