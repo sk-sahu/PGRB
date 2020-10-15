@@ -5,4 +5,5 @@ delete_merged_file: true
 rmd_files: ["index.Rmd",
   "01-intro.Rmd",
   "02-Computation-Environment.Rmd",
-  "03-reproducing-a-workflow.Rmd"]
+  "03-reproducing-a-workflow.Rmd",
+  "04-researcher-stories.Rmd"]
